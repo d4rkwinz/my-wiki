@@ -17,3 +17,7 @@ This is a peer of [[wiki/index|the wiki]], not a part of it. Notes are useful **
 ### AI-assisted development
 
 - [[Using AI Coding Tools Effectively]] — failure modes of LLM coding assistants and a phase-by-phase workflow (Clean → Plan → Small Steps → Verify → Double-check).
+
+### References
+
+- [[repos]] — curated GitHub bookmarks, one line per repo, sectioned by domain.
