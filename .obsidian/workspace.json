@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "056e6416aca2d736",
+        "id": "4e2102b320dbd0da",
         "type": "tabs",
         "children": [
           {
-            "id": "30e2cde02417358c",
+            "id": "8f6c20910d08264c",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "SOURCE_FILE",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,7 +70,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -180,8 +181,12 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "30e2cde02417358c",
+  "active": "8f6c20910d08264c",
   "lastOpenFiles": [
+    "templates/Digest Template.md",
+    "README.md",
+    "raw/SOURCE_FILENAME.md",
+    "raw/Becoming a top 1% Claude Code user_ the complete playbook no one else is sharing.md",
     "wiki/concepts/Load Balancer.md",
     "wiki/concepts/Database Replication.md",
     "wiki/concepts/Database Sharding.md",
@@ -189,7 +194,6 @@
     "wiki/maps/System Design.md",
     "log.md",
     "notes/notes.md",
-    "raw/SOURCE_FILENAME.md",
     "notes/Using AI Coding Tools Effectively.md",
     "wiki/maps/maps.md",
     "notes",
@@ -198,7 +202,6 @@
     "wiki/maps/Distributed Systems.md",
     "wiki/queue.md",
     "CLAUDE.md",
-    "README.md",
     "digest/Scale From Zero To Millions Of Users.md",
     "wiki/concepts/Single Point of Failure.md",
     "wiki/concepts/Sharding Key.md",
@@ -207,8 +210,6 @@
     "wiki/concepts/Message Queue.md",
     "wiki/concepts/Multi-Data-Center Architecture.md",
     "wiki/concepts/Stateless Web Tier.md",
-    "wiki/concepts/CDN.md",
-    "wiki/concepts/Cache.md",
     "wiki/maps",
     "wiki/concepts",
     "digest",

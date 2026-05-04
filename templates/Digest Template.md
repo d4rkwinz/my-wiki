@@ -1,5 +1,5 @@
 ---
-source: "[[raw/SOURCE_FILENAME]]"
+source: "raw/SOURCE_FILENAME.md"
 status: reading
 read_on: YYYY-MM-DD
 ---
@@ -17,8 +17,10 @@ read_on: YYYY-MM-DD
 
 Atoms that should become `wiki/concepts/*.md`. One line each — this is the checklist for Phase 2 (Promote).
 
-- [[Concept Name]] — one-line definition.
-- [[Concept Name]] — one-line definition.
+Replace the bullets below with real candidates, one per line, using the format: `[[Title]] — one-line definition.` Do not leave the placeholder text — Obsidian will auto-create stub files for any unresolved `[[wikilink]]`.
+
+- (replace me) — one-line definition.
+- (replace me) — one-line definition.
 
 ## Questions / gaps
 
