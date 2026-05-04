@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4e2102b320dbd0da",
+        "id": "42457fc39b90d370",
         "type": "tabs",
         "children": [
           {
-            "id": "8f6c20910d08264c",
+            "id": "cfa1e4086d3e0c25",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "notes/Top 1% Claude Code Playbook.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Top 1% Claude Code Playbook"
             }
           }
         ]
@@ -49,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "SOURCE_FILE",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,12 +74,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 285.5
   },
   "right": {
     "id": "e78d1d03d0fadd6f",
@@ -181,8 +184,10 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "8f6c20910d08264c",
+  "active": "cfa1e4086d3e0c25",
   "lastOpenFiles": [
+    "log.md.tmp.36780.1777911743343",
+    "notes/Top 1% Claude Code Playbook.md",
     "templates/Digest Template.md",
     "README.md",
     "raw/SOURCE_FILENAME.md",
@@ -208,8 +213,6 @@
     "Metrics.md",
     "wiki/core.md",
     "wiki/concepts/Message Queue.md",
-    "wiki/concepts/Multi-Data-Center Architecture.md",
-    "wiki/concepts/Stateless Web Tier.md",
     "wiki/maps",
     "wiki/concepts",
     "digest",

@@ -17,6 +17,7 @@ This is a peer of [[wiki/index|the wiki]], not a part of it. Notes are useful **
 ### AI-assisted development
 
 - [[Using AI Coding Tools Effectively]] — failure modes of LLM coding assistants and a phase-by-phase workflow (Clean → Plan → Small Steps → Verify → Double-check).
+- [[Top 1% Claude Code Playbook]] — systems-thinking guide to Claude Code: CLAUDE.md instruction budget, hooks as deterministic guardrails, subagents for parallel isolated contexts, MCP integrations, two-Claude review pattern.
 
 ### References
 
