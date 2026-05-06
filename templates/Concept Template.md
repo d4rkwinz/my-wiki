@@ -2,7 +2,7 @@
 aliases: []
 tags: []
 sources:
-  - "[[digest/SOURCE_FILENAME]]"
+  - "Source Title (YYYY-MM-DD)"
 status: stub
 updated: YYYY-MM-DD
 ---
