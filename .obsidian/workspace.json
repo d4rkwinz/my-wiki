@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "4289ed810916bee7",
+        "id": "056e6416aca2d736",
         "type": "tabs",
         "children": [
           {
-            "id": "82814ecd33617361",
+            "id": "30e2cde02417358c",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -180,38 +180,39 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "82814ecd33617361",
+  "active": "30e2cde02417358c",
   "lastOpenFiles": [
+    "wiki/concepts/Load Balancer.md",
+    "wiki/concepts/Database Replication.md",
+    "wiki/concepts/Database Sharding.md",
+    "wiki/maps/Databases.md",
     "wiki/maps/System Design.md",
+    "log.md",
+    "notes/notes.md",
+    "raw/SOURCE_FILENAME.md",
+    "notes/Using AI Coding Tools Effectively.md",
+    "wiki/maps/maps.md",
+    "notes",
+    "raw/Using AI Coding Tools Effectively.md",
+    "wiki/maps/Networking.md",
+    "wiki/maps/Distributed Systems.md",
     "wiki/queue.md",
     "CLAUDE.md",
-    "wiki/maps/maps.md",
-    "log.md",
     "README.md",
     "digest/Scale From Zero To Millions Of Users.md",
     "wiki/concepts/Single Point of Failure.md",
     "wiki/concepts/Sharding Key.md",
     "Metrics.md",
-    "wiki/concepts/Database Sharding.md",
-    "wiki/maps/Distributed Systems.md",
     "wiki/core.md",
     "wiki/concepts/Message Queue.md",
     "wiki/concepts/Multi-Data-Center Architecture.md",
     "wiki/concepts/Stateless Web Tier.md",
     "wiki/concepts/CDN.md",
     "wiki/concepts/Cache.md",
-    "wiki/concepts/Database Replication.md",
-    "wiki/concepts/Load Balancer.md",
-    "templates/Concept Template.md",
-    "templates/Digest Template.md",
-    "wiki/maps/Maps.md",
     "wiki/maps",
     "wiki/concepts",
     "digest",
-    "raw/Scale From Zero To Millions Of Users.md",
     "templates",
-    "raw/One Page Cheat Sheet.md",
-    "Welcome.md",
     "raw/web",
     "wiki",
     "raw"

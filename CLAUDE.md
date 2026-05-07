@@ -13,13 +13,16 @@ The vault is synced via Obsidian Sync (`sync: true` in `.obsidian/core-plugins.j
 The folder structure is a deliberate three-stage pipeline. Treat the boundaries as enforceable rules, not suggestions.
 
 ```
-raw/        verbatim sources                       (READ-ONLY)
-digest/     reading notes, one per source          (working area)
+raw/        verbatim sources                       (TEMPORARY)
+digest/     reading notes, one per source          (TEMPORARY working area)
 wiki/       published knowledge graph
   concepts/   atomic evergreen notes (one concept per note)
   maps/       Maps of Content (topical hubs); maps.md is the root MOC
   core.md     canonical concept registry
+  queue.md    deferred concept candidates
   index.md    vault landing page
+notes/      source-shaped reference material        (peer of wiki/, not part of it)
+  notes.md    root index for the notes area
 templates/  Obsidian templates: Digest Template, Concept Template
 log.md      append-only operations record (vault root)
 ```
@@ -51,13 +54,31 @@ Every digest follows the contract in `templates/Digest Template.md`:
 - **`queue.md`** — Rolling list of deferred concept candidates (atoms named by past sources but not yet substantively covered). Append on promote; tick off / remove when a future source promotes one.
 - **`index.md`** — Vault landing page. Points to `core.md`, `maps.md`, and `queue.md`.
 
+### `notes/` — source-shaped reference material (peer of `wiki/`)
+
+For sources that resist atomization: cheat sheets, opinionated guides, runbooks, condensed summaries, personal heuristics. The value lives in the document's **shape** (a workflow loop, a failure-mode table, a checklist), not in any single extracted idea. Atomizing them would lose information.
+
+Rules differ from `wiki/concepts/`:
+
+- **Not listed in `core.md`.** That registry is for atomic concepts only.
+- **No ≥2-outgoing-wikilinks requirement.** Notes don't need to participate in the concept graph.
+- **MOC-linked from `notes/notes.md`** (the notes area's root index, peer to `wiki/maps/maps.md`). Not from `wiki/maps/`.
+- **Single-source is normal.** Concepts often gather sources over time; notes typically don't.
+- **Frontmatter:** `tags`, `sources` (plain-string source titles), `status` (`draft` | `published`), `updated`.
+
+When unsure whether something is a note or a concept: would atomizing it lose information? Yes → `notes/`. No → `wiki/concepts/` via the normal pipeline.
+
 ### `templates/`
 
 Obsidian templates instantiated via the core `templates` plugin. Currently `Digest Template.md` and `Concept Template.md`.
 
 ## Ingestion workflow
 
-Two explicit phases. Don't skip phase 1 — going raw → wiki directly produces shallow, low-fidelity concepts.
+Two paths depending on source shape.
+
+**Concept-shaped sources** (technical exposition, papers, talks) follow the two-phase Distill → Promote pipeline below. Don't skip phase 1 — going raw → wiki directly produces shallow, low-fidelity concepts.
+
+**Note-shaped sources** (cheat sheets, guides, runbooks, opinionated checklists) skip the digest step entirely: move from `raw/` directly to `notes/`, add minimal frontmatter, link from `notes/notes.md`, log the move, delete the raw file. There is no Phase 1 distillation because the source is already in its final shape — distilling a cheat sheet just produces a worse cheat sheet. See "Notes-shaped sources: direct path" below the standard pipeline.
 
 ### Phase 1: Distill (`raw/X.md` → `digest/X.md`)
 
@@ -83,6 +104,19 @@ For each item in the digest's "Concept candidates" list:
 8. **Cleanup.** Delete `raw/X.md` and `digest/X.md`. Provenance now lives in `log.md` (chronological) and each concept's `sources:` frontmatter (per-concept). The raw and digest files have no further role.
 
 A promote is **not done** until `core.md` reflects it, `log.md` records it, the queue absorbs deferred candidates, and the raw + digest files are deleted. If you stop mid-promote, leave `status: digested` on the digest and skip cleanup so it's obvious work remains.
+
+### Notes-shaped sources: direct path
+
+For sources where atomization would lose information (cheat sheets, runbooks, guides) — skip Phase 1 and Phase 2 entirely:
+
+1. Move (or copy + delete) the file from `raw/X.md` to `notes/Title.md`. Rename freely; the raw filename is rarely the right note title.
+2. Add minimal frontmatter at the top: `tags`, `sources: ["Original Title (YYYY-MM-DD)"]`, `status` (`draft` | `published`), `updated`.
+3. Light cleanup only — fix obvious markdown artifacts; do **not** restructure. The shape is the value.
+4. Link the new note from the appropriate section of `notes/notes.md` (create a new section if no existing one fits).
+5. Append an entry to `log.md`: `**note** · raw → notes/Title.md (no distillation; source was already note-shaped)`.
+6. Delete the raw file (if not already moved).
+
+Notes do **not** participate in `core.md`, `wiki/maps/`, or the concept graph. They have their own root index at `notes/notes.md`.
 
 ## Note conventions
 

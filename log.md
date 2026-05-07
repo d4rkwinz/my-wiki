@@ -10,6 +10,10 @@ Append-only record of structural changes to the vault. Newest entries at the top
 
 ## 2026-05-03
 
+- **restructure** · added `notes/` as a top-level peer of `wiki/` for source-shaped reference material that resists atomization (cheat sheets, guides, runbooks). Created `notes/notes.md` as the root index. CLAUDE.md updated: schema diagram, new `notes/` section under "Vault model", split "Ingestion workflow" into concept-shaped (two-phase) vs note-shaped (direct path), added "Notes-shaped sources: direct path" subsection. `wiki/index.md` now links `[[notes]]`.
+
+- **note** · `raw/One Page Cheat Sheet.md` → `notes/Using AI Coding Tools Effectively.md` (no distillation; source was already note-shaped — a cheat sheet on LLM coding workflow whose value is in the failure-mode table + Phase 0–5 loop). Added frontmatter (tags, source title, status, updated). Linked from `notes/notes.md` under "AI-assisted development".
+
 - **restructure** · pipeline change: raw/ and digest/ are now temporary working areas, deleted at the end of Phase 2. Provenance moves to `log.md` + plain-string `sources:` frontmatter on concepts. Deferred candidates moved to a new permanent file `wiki/queue.md`. Concept Template `sources:` field updated to plain-string format. CLAUDE.md updated: pipeline description, Phase 2 cleanup steps, Things to avoid, lint checks 2 + 5. Added "flat folders by default" trigger rule under Graph hygiene (split when concepts > 100 or any MOC > 40).
 
 - **cleanup** · `raw/Scale From Zero To Millions Of Users.md` and `digest/Scale From Zero To Millions Of Users.md` deleted post-promote. Source title preserved on each promoted concept's `sources:` frontmatter as `"Scale From Zero To Millions Of Users (2026-05-03)"`. 20 deferred candidates from the digest moved to `wiki/queue.md`.

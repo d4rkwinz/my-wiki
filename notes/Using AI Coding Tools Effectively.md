@@ -1,4 +1,12 @@
-## 🧾 1-Page Cheat Sheet: Using AI Coding Tools Effectively
+---
+tags: [ai, workflow, coding]
+sources:
+  - "One Page Cheat Sheet (2026-05-03)"
+status: published
+updated: 2026-05-03
+---
+
+## 🧾 Using AI Coding Tools Effectively
 
 ---
 
@@ -10,15 +18,15 @@
 
 ## ⚠️ The 7 Failure Modes
 
-|Problem|What Happens|What To Do|
-|---|---|---|
-|❌ False success|Says “done” but code is broken|Always compile, lint, test|
-|🧠 Context loss|Forgets things mid-task|Keep tasks small|
-|🩹 Lazy fixes|Band-aid solutions|Ask for senior-level fixes|
-|👤 Single-agent limit|Runs out of memory|Split work into chunks|
-|📄 File limits|Can’t see full files|Read large files in parts|
-|🔍 Truncated results|Misses data silently|Re-run searches narrowly|
-|❌ No real understanding|Misses hidden references|Manually verify changes|
+| Problem                 | What Happens                   | What To Do                 |
+| ----------------------- | ------------------------------ | -------------------------- |
+| ❌ False success         | Says “done” but code is broken | Always compile, lint, test |
+| 🧠 Context loss         | Forgets things mid-task        | Keep tasks small           |
+| 🩹 Lazy fixes           | Band-aid solutions             | Ask for senior-level fixes |
+| 👤 Single-agent limit   | Runs out of memory             | Split work into chunks     |
+| 📄 File limits          | Can’t see full files           | Read large files in parts  |
+| 🔍 Truncated results    | Misses data silently           | Re-run searches narrowly   |
+| ❌ No real understanding | Misses hidden references       | Manually verify changes    |
 
 ---
 
