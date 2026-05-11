@@ -1,7 +1,7 @@
 ---
 tags: [bookmarks, references]
 status: published
-updated: 2026-05-04
+updated: 2026-05-11
 ---
 
 # Repos
@@ -49,10 +49,18 @@ Tooling that extends or controls LLM coding agents (Claude Code, Gemini CLI, etc
 - [mattpocock/skills](https://github.com/mattpocock/skills) — Shell-installable Claude Code skill pack from Matt Pocock (`/tdd`, `/diagnose`, `/improve-codebase-architecture`, `/grill-me`); senior-engineer practices encoded as agent slash commands. #shell #claude-code #skills #ai
 - [Chachamaru127/claude-code-harness](https://github.com/Chachamaru127/claude-code-harness) — Plan → Work → Review → Release framework wrapping Claude Code; enforces multi-perspective review and parallel-task safety guardrails. Go + Shell, no Node required (v4+). #go #shell #claude-code #framework #ai
 - [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) — Drop-in `CLAUDE.md` with four coding principles (Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution) distilled from Karpathy's observations on LLM coding pitfalls. #claude-code #principles #ai
+- [atilaahmettaner/tradingview-mcp](https://github.com/atilaahmettaner/tradingview-mcp) — MCP server exposing real-time crypto/stock screening, technical indicators (Bollinger Bands, candlestick patterns), and multi-exchange data (Binance, KuCoin, Bybit) to Claude Desktop; lets an LLM agent query live markets without leaving the editor. #python #mcp #ai #trading
+- [elementalsouls/Claude-OSINT](https://github.com/elementalsouls/Claude-OSINT) — Drop-in Claude `SKILL.md` files for authorized red-team / bug-bounty external recon: 90+ recon modules, 48 secret-regex patterns, 80+ dorks, 9 read-only credential validators, 27 attack-path templates. #python #claude-code #skills #ai #security #osint
+- [ruvnet/ruflo](https://github.com/ruvnet/ruflo) — Multi-agent orchestration platform for Claude with swarm intelligence, RAG integration, and native Claude Code / Codex MCP integration; for building conversational AI systems beyond single-agent loops. #typescript #claude-code #framework #mcp #ai #multi-agent
+- [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) — Production-grade engineering skills for AI coding agents (Claude Code, Cursor, Antigravity); shell-installable skill pack from Addy Osmani. #shell #claude-code #cursor #skills #ai
 
 ## ML & AI
 
-_(empty — for models, training, inference, datasets. Agent tooling lives above.)_
+For models, training, inference, datasets, and **domain-specific** agents (finance, healthcare, etc.). Coding-agent tooling lives in the section above.
+
+- [brokermr810/QuantDinger](https://github.com/brokermr810/QuantDinger) — AI quant trading platform spanning crypto / stocks / forex with backtesting, live trading (IBKR), and multi-agent research; single codebase alternative to stitching together QuantConnect + custom data pipelines. #python #ai #trading #quant
+- [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) — Multi-agent LLM framework for financial trading; agents take roles (analyst, researcher, trader, risk manager) and coordinate decisions — useful as a reference architecture for domain-specific multi-agent systems. #python #llm #ai #multi-agent #trading
+- [virattt/dexter](https://github.com/virattt/dexter) — Autonomous TypeScript agent for deep financial research; small, readable example of a focused single-purpose research agent vs. general-purpose frameworks. #typescript #ai #agent #finance
 
 ## Languages & runtimes
 
