@@ -22,7 +22,12 @@ wiki/       published knowledge graph
   queue.md    deferred concept candidates
   index.md    vault landing page
 notes/      source-shaped reference material        (peer of wiki/, not part of it)
-  notes.md    root index for the notes area
+  index.md    root index for the notes area
+  ai/         AI-assisted development (sub-domain with its own index.md)
+  startups/   startups & business study (sub-domain with its own index.md)
+  repos/      GitHub bookmarks (sub-domain; index.md IS the bookmark list)
+  bookmarks/  non-GitHub references (sub-domain with its own index.md)
+  DDoDS/...   optional publisher silos for multi-part series
 templates/  Obsidian templates: Digest Template, Concept Template
 log.md      append-only operations record (vault root)
 ```
@@ -58,13 +63,16 @@ Every digest follows the contract in `templates/Digest Template.md`:
 
 For sources that resist atomization: cheat sheets, opinionated guides, runbooks, condensed summaries, personal heuristics. The value lives in the document's **shape** (a workflow loop, a failure-mode table, a checklist), not in any single extracted idea. Atomizing them would lose information.
 
+**Structure.** `notes/` is organized as a small folder hierarchy: a root `notes/index.md` that links to sub-domain folders (`ai/`, `startups/`, `repos/`, `bookmarks/`), each with its own `index.md`. Content notes live inside their domain folder. Multi-part series from one publisher may live in a publisher silo (e.g. `notes/DDoDS/LLMOps/`) so future parts file alongside Part 1; the domain sub-index still links to them.
+
 Rules differ from `wiki/concepts/`:
 
 - **Not listed in `core.md`.** That registry is for atomic concepts only.
 - **No ≥2-outgoing-wikilinks requirement.** Notes don't need to participate in the concept graph.
-- **MOC-linked from `notes/notes.md`** (the notes area's root index, peer to `wiki/maps/maps.md`). Not from `wiki/maps/`.
+- **MOC-linked from the relevant sub-index** (`notes/<domain>/index.md`), which is itself linked from `notes/index.md` (root). Not from `wiki/maps/`.
 - **Single-source is normal.** Concepts often gather sources over time; notes typically don't.
 - **Frontmatter:** `tags`, `sources` (plain-string source titles), `status` (`draft` | `published`), `updated`.
+- **Wikilinks to sub-indexes are path-qualified:** `[[notes/startups/index|Startups]]`, not bare `[[index]]` (multiple `index.md` files would collide on basename).
 
 When unsure whether something is a note or a concept: would atomizing it lose information? Yes → `notes/`. No → `wiki/concepts/` via the normal pipeline.
 
@@ -78,7 +86,7 @@ Two paths depending on source shape.
 
 **Concept-shaped sources** (technical exposition, papers, talks) follow the two-phase Distill → Promote pipeline below. Don't skip phase 1 — going raw → wiki directly produces shallow, low-fidelity concepts.
 
-**Note-shaped sources** (cheat sheets, guides, runbooks, opinionated checklists) skip the digest step entirely: move from `raw/` directly to `notes/`, add minimal frontmatter, link from `notes/notes.md`, log the move, delete the raw file. There is no Phase 1 distillation because the source is already in its final shape — distilling a cheat sheet just produces a worse cheat sheet. See "Notes-shaped sources: direct path" below the standard pipeline.
+**Note-shaped sources** (cheat sheets, guides, runbooks, opinionated checklists) skip the digest step entirely: move from `raw/` directly to the appropriate `notes/<domain>/` folder, add minimal frontmatter, link from that domain's `index.md`, log the move, delete the raw file. There is no Phase 1 distillation because the source is already in its final shape — distilling a cheat sheet just produces a worse cheat sheet. See "Notes-shaped sources: direct path" below the standard pipeline.
 
 ### Phase 1: Distill (`raw/X.md` → `digest/X.md`)
 
@@ -109,14 +117,15 @@ A promote is **not done** until `core.md` reflects it, `log.md` records it, the 
 
 For sources where atomization would lose information (cheat sheets, runbooks, guides) — skip Phase 1 and Phase 2 entirely:
 
-1. Move (or copy + delete) the file from `raw/X.md` to `notes/Title.md`. Rename freely; the raw filename is rarely the right note title.
-2. Add minimal frontmatter at the top: `tags`, `sources: ["Original Title (YYYY-MM-DD)"]`, `status` (`draft` | `published`), `updated`.
-3. Light cleanup only — fix obvious markdown artifacts; do **not** restructure. The shape is the value.
-4. Link the new note from the appropriate section of `notes/notes.md` (create a new section if no existing one fits).
-5. Append an entry to `log.md`: `**note** · raw → notes/Title.md (no distillation; source was already note-shaped)`.
-6. Delete the raw file (if not already moved).
+1. Pick the right domain folder (`ai/`, `startups/`, `repos/`, `bookmarks/`, or a publisher silo like `DDoDS/Series/`). If no folder fits, create a new one with its own `index.md`.
+2. Move (or copy + delete) the file from `raw/X.md` to `notes/<domain>/Title.md`. Rename freely; the raw filename is rarely the right note title.
+3. Add minimal frontmatter at the top: `tags`, `sources: ["Original Title (YYYY-MM-DD)"]`, `status` (`draft` | `published`), `updated`.
+4. Light cleanup only — fix obvious markdown artifacts; do **not** restructure. The shape is the value.
+5. Link the new note from the appropriate section of that domain's `index.md` (create a new section if no existing one fits). If you added a new domain folder, also link its `index.md` from `notes/index.md`.
+6. Append an entry to `log.md`: `**note** · raw → notes/<domain>/Title.md (no distillation; source was already note-shaped)`.
+7. Delete the raw file (if not already moved).
 
-Notes do **not** participate in `core.md`, `wiki/maps/`, or the concept graph. They have their own root index at `notes/notes.md`.
+Notes do **not** participate in `core.md`, `wiki/maps/`, or the concept graph. They have their own root index at `notes/index.md` with domain sub-indexes underneath.
 
 ## Note conventions
 
@@ -182,6 +191,6 @@ A callable graph audit. Run on request ("lint the vault"), at the end of a multi
 - **Never edit files in `raw/` while they exist.** Raw is read-only during its short lifetime — fixes to typos or formatting go in the digest as quotes. Raw and digest are deleted at the end of Phase 2; do not delete them earlier (you'll lose work in progress) and do not preserve them after (the wiki + log are the canonical record).
 - **Don't skip the digest step.** Going raw → wiki directly produces shallow concepts.
 - **Don't put `[[wikilinks]]` to `raw/` or `digest/` files in the wiki.** They will become broken links the moment cleanup runs. Use plain-string source titles in `sources:` frontmatter instead.
-- **Don't create a top-level `README.md`** — Obsidian vaults use `index.md` (in `wiki/`) as the landing page.
+- **Don't touch the vault-root `README.md`** — it exists for the GitHub repository view, not for Obsidian navigation. The Obsidian landing page is `wiki/index.md`. Keep the README minimal (repo title and a one-line description); don't grow it into a second landing page.
 - **Don't reorganize folders.** The raw/digest/wiki split is load-bearing.
 - **Don't edit `.obsidian/`** unless the user explicitly asks; changes propagate via Sync to all their devices.

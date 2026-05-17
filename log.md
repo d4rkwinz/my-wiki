@@ -8,6 +8,14 @@ Append-only record of structural changes to the vault. Newest entries at the top
 
 ---
 
+## 2026-05-17
+
+- **lint** · ran all 8 checks. Passing: orphan concepts (10/10), dead wikilinks (0 found across vault), `core.md` ↔ concepts symmetry (10 ↔ 10), source counts, raw/digest emptiness, frontmatter completeness, contradiction sweep. Fixed: **MOC reachability** — `wiki/maps/maps.md` only linked `System Design`, making concept reach 4 hops from `wiki/index.md` (violating the ≤3-hop rule). Updated `maps.md` to link the five topical MOCs (Networking, Databases, Caching, Distributed Systems, Operations) directly and demote `System Design` to a new "Umbrella MOCs" section. Concept reach is now `index → maps → topic MOC → concept` (3 hops). Updated CLAUDE.md "Things to avoid" — the prior rule banning vault-root `README.md` no longer applies (the README is intentional for GitHub); rule rewritten to keep the README minimal so it doesn't grow into a second landing page.
+
+- **restructure** · `notes/` reorganized from flat layout to domain-folder hierarchy. New shape: `notes/index.md` (root) → sub-domain folders each with their own `index.md`: `ai/`, `startups/`, `repos/`, `bookmarks/`. Existing `DDoDS/LLMOps/` publisher silo preserved for multi-part series (AI Engineering and LLMOps Foundations stays there; linked from `notes/ai/index.md`). Files moved: `notes.md` → `notes/index.md`; `repos.md` → `repos/index.md`; `startups.md` → `startups/index.md`; `Business Playbooks.md` → `startups/`; 2 AI notes → `ai/`; `Cheap Side-Project Stack 2026.md` → `bookmarks/`. Wikilinks path-qualified for sub-indexes (`[[notes/startups/index|...]]`) to avoid `index.md` basename collisions. `wiki/index.md` updated. CLAUDE.md updated: schema diagram, `notes/` section (new Structure paragraph + path-qualified linking convention), Note-shaped sources path (now writes to `notes/<domain>/Title.md` and links from the domain's `index.md`).
+
+---
+
 ## 2026-05-03
 
 - **restructure** · added `notes/` as a top-level peer of `wiki/` for source-shaped reference material that resists atomization (cheat sheets, guides, runbooks). Created `notes/notes.md` as the root index. CLAUDE.md updated: schema diagram, new `notes/` section under "Vault model", split "Ingestion workflow" into concept-shaped (two-phase) vs note-shaped (direct path), added "Notes-shaped sources: direct path" subsection. `wiki/index.md` now links `[[notes]]`.
