@@ -1,7 +1,7 @@
 ---
 tags: [bookmarks, references]
 status: published
-updated: 2026-05-17
+updated: 2026-05-18
 ---
 
 # 📚 Repos
@@ -34,7 +34,7 @@ _(empty)_
 
 ## Databases & storage
 
-_(empty)_
+- [cocoindex-io/cocoindex](https://github.com/cocoindex-io/cocoindex) — Incremental data-indexing engine for long-horizon AI agents: real-time ETL, CDC, semantic search, and knowledge-graph building from any data source. Python + Rust core. The "I have a constantly-changing corpus and need it indexed for RAG/agents" framework. #python #rust #ai #rag #etl #cdc #knowledge-graph #indexing
 
 ## Distributed systems & infrastructure
 
@@ -53,7 +53,6 @@ Tooling that extends or controls LLM coding agents (Claude Code, Gemini CLI, etc
 - [mattpocock/skills](https://github.com/mattpocock/skills) — Shell-installable Claude Code skill pack from Matt Pocock (`/tdd`, `/diagnose`, `/improve-codebase-architecture`, `/grill-me`); senior-engineer practices encoded as agent slash commands. #shell #claude-code #skills #ai
 - [Chachamaru127/claude-code-harness](https://github.com/Chachamaru127/claude-code-harness) — Plan → Work → Review → Release framework wrapping Claude Code; enforces multi-perspective review and parallel-task safety guardrails. Go + Shell, no Node required (v4+). #go #shell #claude-code #framework #ai
 - [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) — Drop-in `CLAUDE.md` with four coding principles (Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution) distilled from Karpathy's observations on LLM coding pitfalls. #claude-code #principles #ai
-- [atilaahmettaner/tradingview-mcp](https://github.com/atilaahmettaner/tradingview-mcp) — MCP server exposing real-time crypto/stock screening, technical indicators (Bollinger Bands, candlestick patterns), and multi-exchange data (Binance, KuCoin, Bybit) to Claude Desktop; lets an LLM agent query live markets without leaving the editor. #python #mcp #ai #trading
 - [elementalsouls/Claude-OSINT](https://github.com/elementalsouls/Claude-OSINT) — Drop-in Claude `SKILL.md` files for authorized red-team / bug-bounty external recon: 90+ recon modules, 48 secret-regex patterns, 80+ dorks, 9 read-only credential validators, 27 attack-path templates. #python #claude-code #skills #ai #security #osint
 - [ruvnet/ruflo](https://github.com/ruvnet/ruflo) — Multi-agent orchestration platform for Claude with swarm intelligence, RAG integration, and native Claude Code / Codex MCP integration; for building conversational AI systems beyond single-agent loops. #typescript #claude-code #framework #mcp #ai #multi-agent
 - [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) — Production-grade engineering skills for AI coding agents (Claude Code, Cursor, Antigravity); shell-installable skill pack from Addy Osmani. #shell #claude-code #cursor #skills #ai
@@ -65,14 +64,22 @@ Tooling that extends or controls LLM coding agents (Claude Code, Gemini CLI, etc
 
 ## ML & AI
 
-For models, training, inference, datasets, and **domain-specific** agents (finance, healthcare, etc.). Coding-agent tooling lives in the section above.
+For models, training, inference, datasets, and **domain-specific** agents that aren't finance-shaped (finance lives in its own section below). Coding-agent tooling lives in the section above.
 
+- [bytedance/Dolphin](https://github.com/bytedance/Dolphin) — ByteDance's ACL 2025 document parsing model (VLM-based OCR + layout analysis); turns PDFs/images into structured output via heterogeneous anchor prompting — research-grade alternative to MinerU or Marker. #python #ai #ocr #pdf #vlm
+- [AIDC-AI/Pixelle-Video](https://github.com/AIDC-AI/Pixelle-Video) — Fully automated short-video generation pipeline (Alibaba AIDC); ComfyUI-based image gen + TTS + video assembly — open-source alternative to commercial AI shorts tools. #python #ai #video-generation #comfyui #aigc
+- [hiyouga/LlamaFactory](https://github.com/hiyouga/LlamaFactory) — Unified fine-tuning toolkit for 100+ LLMs and VLMs (LLaMA, Qwen, DeepSeek, Gemma, Mistral, etc.) with PEFT methods (LoRA, QLoRA), RLHF, quantization, and instruction tuning out of the box; ACL 2024 paper. The default starting point if you need to fine-tune an open model. #python #ai #fine-tuning #llm #lora #qlora #peft
+
+## Finance / markets
+
+Domain-grouped: anything for stocks, crypto, forex, market data, trading, financial research, or scenario forecasting. Cross-axis browsing by tech shape (MCP, multi-agent, framework, app) is via tags.
+
+- [atilaahmettaner/tradingview-mcp](https://github.com/atilaahmettaner/tradingview-mcp) — MCP server exposing real-time crypto/stock screening, technical indicators (Bollinger Bands, candlestick patterns), and multi-exchange data (Binance, KuCoin, Bybit) to Claude Desktop; lets an LLM agent query live markets without leaving the editor. #python #mcp #ai #trading
+- [Open-Dev-Society/OpenStock](https://github.com/Open-Dev-Society/OpenStock) — Open-source stock-market platform (Next.js + shadcn/ui + Inngest) with real-time prices, alerts, and company insights — free alternative to TradingView/Yahoo Finance subscriptions and a reference architecture for real-time data UIs. #typescript #nextjs #shadcn-ui #stock-market #real-time
 - [brokermr810/QuantDinger](https://github.com/brokermr810/QuantDinger) — AI quant trading platform spanning crypto / stocks / forex with backtesting, live trading (IBKR), and multi-agent research; single codebase alternative to stitching together QuantConnect + custom data pipelines. #python #ai #trading #quant
 - [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) — Multi-agent LLM framework for financial trading; agents take roles (analyst, researcher, trader, risk manager) and coordinate decisions — useful as a reference architecture for domain-specific multi-agent systems. #python #llm #ai #multi-agent #trading
 - [virattt/dexter](https://github.com/virattt/dexter) — Autonomous TypeScript agent for deep financial research; small, readable example of a focused single-purpose research agent vs. general-purpose frameworks. #typescript #ai #agent #finance
-- [bytedance/Dolphin](https://github.com/bytedance/Dolphin) — ByteDance's ACL 2025 document parsing model (VLM-based OCR + layout analysis); turns PDFs/images into structured output via heterogeneous anchor prompting — research-grade alternative to MinerU or Marker. #python #ai #ocr #pdf #vlm
 - [YSLAB-ai/scenario-lab](https://github.com/YSLAB-ai/scenario-lab) — Local-first scenario analysis framework using Codex or Claude as the reasoning engine; Monte Carlo + MCTS for forecasting market moves, geopolitical risk, and decision trees. #python #ai #forecasting #claude #market-simulation
-- [AIDC-AI/Pixelle-Video](https://github.com/AIDC-AI/Pixelle-Video) — Fully automated short-video generation pipeline (Alibaba AIDC); ComfyUI-based image gen + TTS + video assembly — open-source alternative to commercial AI shorts tools. #python #ai #video-generation #comfyui #aigc
 
 ## Languages & runtimes
 
@@ -82,13 +89,16 @@ _(empty)_
 
 - [Vrun-design/openflowkit](https://github.com/Vrun-design/openflowkit) — Local-first, open-source AI diagramming tool for architecture diagrams and flowcharts; code-to-diagram, Mermaid-compatible, animated exports — free alternative to Eraser / Excalidraw+ for system-design work. #typescript #react #ai #diagramming #system-design #local-first
 - [rixinhahaha/snip](https://github.com/rixinhahaha/snip) — Electron menu-bar app (macOS/Linux) for screenshot capture + annotation + Mermaid diagram rendering + AI organization via local Ollama; positioned as the "visual communication layer between humans and AI agents". #javascript #electron #ai #screenshot #ollama #local-first
+- [jsgrrchg/NeverWrite](https://github.com/jsgrrchg/NeverWrite) — "The bastard son between Cursor and Obsidian" — AI-native note-taking/writing editor blending Cursor's agent UX with Obsidian's wiki model. Worth watching if you want AI-driven PKM without leaving the editor metaphor. #typescript #ai #pkm #editor #obsidian
 
 ## Security
 
 - [megadose/holehe](https://github.com/megadose/holehe) — OSINT tool that checks whether an email is registered on 100+ sites (Twitter, Instagram, etc.) by probing forgotten-password flows; classic email reconnaissance for authorized recon. #python #osint #security #email #recon
+- [keepassxreboot/keepassxc](https://github.com/keepassxreboot/keepassxc) — Cross-platform community-driven port of KeePass Password Safe; the canonical open-source desktop password manager (macOS/Linux/Windows + YubiKey + browser integration). Default choice when you don't want a cloud password manager. #cpp #security #password-manager #cross-platform #self-hosted
 
 ## Misc / uncategorized
 
 Holding pen for repos that haven't found their section yet. Re-categorize during periodic review (or during a vault lint).
 
 - [Stnslv-k/shorts-saver-bot](https://github.com/Stnslv-k/shorts-saver-bot) — Self-hosted Telegram bot saving YouTube Shorts to Notion or Obsidian with AI extraction (Whisper + modular LLM backends); useful pattern for piping ephemeral content into a PKM. Docker. #python #docker #telegram #obsidian #notion #pkm #self-hosted
+- [cporter202/automate-faceless-content](https://github.com/cporter202/automate-faceless-content) — Playbook / awesome-list for automating faceless short-form + long-form video content workflows (idea → script → video → scheduled posts) across YouTube/TikTok/Facebook/Instagram. Content-creator pipeline reference, not a tool. #content-creation #automation #awesome-list #video
